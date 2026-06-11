@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meerkat Video Analysis</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.6}
+header{background:linear-gradient(135deg,#0f172a,#334155);color:white;padding:46px 24px}
+header div,main{max-width:1120px;margin:0 auto}
+h1{margin:0 0 12px;font-size:40px;line-height:1.1}
+h2{margin-top:40px;font-size:28px}
+.lead{max-width:880px;font-size:18px;color:#e2e8f0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(15,23,42,.06)}
+.metric{font-size:34px;font-weight:700;color:#b91c1c}
+.label{color:#64748b}
+figure{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:14px;margin:18px 0;box-shadow:0 2px 12px rgba(15,23,42,.06)}
+img{max-width:100%;height:auto;border-radius:10px;display:block}
+figcaption{color:#475569;font-size:14px;margin-top:10px}
+table{border-collapse:collapse;width:100%;background:white;border-radius:12px;overflow:hidden}
+th,td{border:1px solid #e2e8f0;padding:10px 12px;text-align:left}
+th{background:#f1f5f9}
+footer{margin-top:50px;padding:28px 24px;background:#0f172a;color:#cbd5e1;text-align:center}
+</style>
+</head>
+<body>
+<header><div><h1>Автоматизированный видеоанализ поведения сурикат</h1>
+<p class="lead">Проект для регистрации поведения сурикат при ольфакторном обогащении среды: извлечение кадров, pseudo-разметка, обучение YOLO, распознавание животных, графики и этологические таблицы.</p></div></header>
+<main>
+<h2>Кратко о проекте</h2>
+<p>Система выделяет сурикат на видеокадрах, сохраняет координаты рамок, оценивает положение животных и формирует таблицы для анализа поведения. Текущая версия является прототипом: разметка подготовлена автоматически и требует ручной проверки перед строгими научными выводами.</p>
+<div class="grid">
+<div class="card"><div class="metric">531</div><div class="label">кадр извлечен из видео</div></div>
+<div class="card"><div class="metric">603</div><div class="label">pseudo-размеченные рамки</div></div>
+<div class="card"><div class="metric">35</div><div class="label">эпох обучения YOLOv8n</div></div>
+<div class="card"><div class="metric">2745</div><div class="label">записей-событий анализа</div></div>
+</div>
+<h2>Основные результаты</h2>
+<table>
+<tr><th>Показатель</th><th>Значение</th></tr>
+<tr><td>Видео</td><td>IMG_1561.MP4</td></tr>
+<tr><td>Длительность</td><td>530,845 с</td></tr>
+<tr><td>Разрешение</td><td>1280×720</td></tr>
+<tr><td>Класс модели</td><td>meerkat</td></tr>
+<tr><td>Precision</td><td>0,747</td></tr>
+<tr><td>Recall</td><td>0,589</td></tr>
+<tr><td>mAP50</td><td>0,674</td></tr>
+<tr><td>mAP50-95</td><td>0,509</td></tr>
+</table>
+<h2>Графики и изображения</h2>
+<figure><img src="assets/bbox_contact_sheet.jpg" alt="Контактный лист с рамками pseudo-разметки."><figcaption>Контактный лист с рамками pseudo-разметки.</figcaption></figure>
+<figure><img src="assets/bbox_preview.jpg" alt="Пример разметки сурикат ограничивающими рамками."><figcaption>Пример разметки сурикат ограничивающими рамками.</figcaption></figure>
+<figure><img src="assets/contact_sheet.jpg" alt="Контактный лист кадров видеоматериала."><figcaption>Контактный лист кадров видеоматериала.</figcaption></figure>
+<figure><img src="assets/IMG1561_annotated_contact_sheet.jpg" alt="Аннотированный контактный лист с результатами анализа."><figcaption>Аннотированный контактный лист с результатами анализа.</figcaption></figure>
+<figure><img src="assets/IMG1561_behavior_counts.jpg" alt="Распределение записей по категориям поведения."><figcaption>Распределение записей по категориям поведения.</figcaption></figure>
+<figure><img src="assets/IMG1561_contact_sheet.jpg" alt="Полный контактный лист кадров IMG_1561."><figcaption>Полный контактный лист кадров IMG_1561.</figcaption></figure>
+<figure><img src="assets/IMG1561_detection_centers_trajectory.jpg" alt="Траектории центров обнаруженных bounding box."><figcaption>Траектории центров обнаруженных bounding box.</figcaption></figure>
+<figure><img src="assets/IMG1561_interval_behavior_stacked.jpg" alt="Динамика категорий поведения по 30-секундным интервалам."><figcaption>Динамика категорий поведения по 30-секундным интервалам.</figcaption></figure>
+<figure><img src="assets/IMG1561_pseudo_bbox_contact_sheet_10s.jpg" alt="Pseudo-разметка с шагом 10 секунд."><figcaption>Pseudo-разметка с шагом 10 секунд.</figcaption></figure>
+<figure><img src="assets/precision_confidence.jpg" alt="Кривая Precision–Confidence."><figcaption>Кривая Precision–Confidence.</figcaption></figure>
+<figure><img src="assets/training_metrics.jpg" alt="Сводные метрики обучения YOLO."><figcaption>Сводные метрики обучения YOLO.</figcaption></figure>
+<h2>Документация проекта</h2>
+<ul>
+<li><a href="pages/01_algorithm.md">Алгоритм анализа</a></li>
+<li><a href="pages/02_materials_and_methods.md">Материалы и методы</a></li>
+<li><a href="pages/03_results_and_discussion.md">Результаты и обсуждение</a></li>
+<li><a href="pages/04_graphical_outputs.md">Графическое отображение результатов</a></li>
+<li><a href="pages/05_code_registry.md">Код и воспроизводимость</a></li>
+</ul>
+<h2>Данные</h2>
+<ul>
+<li><a href="data/IMG1561_behavior_event_summary.csv">Сводка по категориям поведения CSV</a></li>
+<li><a href="data/enrichment_zone.json">Координаты зоны обогащения JSON</a></li>
+<li><a href="data/IMG1561_pseudo_label_summary.txt">Сводка pseudo-разметки TXT</a></li>
+</ul>
+</main><footer>Meerkat Video Analysis · GitHub Pages</footer>
+</body></html>
