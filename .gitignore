@@ -1,0 +1,6 @@
+.venv/
+.ultralytics/
+.matplotlib/
+__pycache__/
+*.pyc
+*.cache
