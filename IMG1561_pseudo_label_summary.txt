@@ -1,0 +1,8 @@
+Pseudo-label generation completed.
+Frames: 531
+Train frames: 424
+Val frames: 107
+Total boxes: 603
+Blank frames: 186
+Method: MOG2 motion segmentation + broad manual anchor zones for recurring visible meerkat positions.
+Important: pseudo-labels are draft labels and require manual validation before scientific claims.
