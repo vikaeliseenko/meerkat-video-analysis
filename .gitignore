@@ -4,3 +4,13 @@
 __pycache__/
 *.pyc
 *.cache
+
+# Large generated/input assets are published as a GitHub Release archive.
+videos/
+frames_for_markup/
+dataset/images/
+results/*.mp4
+results/IMG1561_contact_sheet.jpg
+
+# Keep the best trained model, skip duplicate checkpoint.
+runs/**/weights/last.pt
